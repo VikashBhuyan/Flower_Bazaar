@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product page</title>
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@600&family=Fira+Code&family=Lato:wght@300;700&family=Open+Sans:wght@300&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400&display=swap" rel="stylesheet">
+
+    <!-- tab icon -->
+    <link rel="icon" href="images/icons8-flower-100.png">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- my styles css  -->
+    <link rel="stylesheet" href="styles/product.css">
+</head>
+<body>
+    <!-- navbar start  -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="navbar-brand-container">
+            <a class="navbar-brand" href="#">
+              <img src="images/Capture.PNG" alt="" id="nav_image_logo">
+              <br>
+              <span id="logo_text">Bazaar</span>
+            </a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="d-flex flex-fill justify-content-center" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav justify-content-evenly flex-fill mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Cart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Sign-Up</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>    
+    <!-- navbar end  -->
+    <hr class="border border-success border-2 opacity-40">
+    <div id="mainBody">
+        <!-- main carousel slides for item  -->
+        <div id="carouselExampleIndicators" class="carousel slide mainCarouselItemImage" data-bs-ride="true">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active image_div">
+                <img src="images/rose_pot_red.PNG" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item image_div" >
+                <img src="images/rose_image_2.PNG" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item image_div">
+                <img src="images/rose_image_3.PNG" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <!-- main carousel slides for item ends  -->
+          <div id="infoDiv">
+            <h2>Red Rose Plant</h2>
+            <p>Price : Rs XXX</p>
+            <p>Rating : 4.7 Star</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet libero dolorum, quia id natus tempora itaque facilis tenetur ipsum fuga excepturi quis impedit molestiae voluptate maxime repudiandae, autem adipisci officiis?
+            Ad, rem ab vel enim in, a adipisci molestiae incidunt laudantium, voluptate quasi consequuntur labore corrupti voluptatibus! Sapiente beatae, harum architecto voluptas, voluptates nostrum id officiis accusantium repudiandae, iste corporis?</p>
+            <a href="#" class="btn btn-outline-success buy_cart_button">Buy Now</a>
+            <a href="#" class="btn btn-success ms-5 buy_cart_button">Add to Cart</a>
+        </div>
+    </div>
+</body>
+</html>
