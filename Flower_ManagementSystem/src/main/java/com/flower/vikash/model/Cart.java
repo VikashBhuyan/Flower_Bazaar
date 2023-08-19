@@ -1,17 +1,17 @@
 package com.flower.vikash.model;
 
-import java.util.List;
+import java.util.Date;
+
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,13 +27,25 @@ public class Cart {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cartId;
 	
+	private Date createdDate;
+	
 	private Double cartTotal;
 	
+	@ManyToOne
+    @JoinColumn(name = "flower_id", referencedColumnName = "flowerId")
+    private Flower flower;
+	
 	@JsonIgnore
-	@OneToOne(mappedBy = "cart",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(nullable = false, name = "user_id")
 	private User user;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "cartId")
-	private List<Flower> flowerList ;
+	private Integer quantity;
+	
+	public Cart(Flower flower, int quantity, User user){
+        this.user = user;
+        this.flower = flower;
+        this.quantity = quantity;
+        this.createdDate = new Date();
+    }
 }
