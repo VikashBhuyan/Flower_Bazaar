@@ -36,7 +36,7 @@ public class Cart {
     private Flower flower;
 	
 	@JsonIgnore
-	@OneToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(nullable = false, name = "user_id")
 	private User user;
 	
