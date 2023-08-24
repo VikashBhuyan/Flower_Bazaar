@@ -1,0 +1,21 @@
+.navbar-brand{
+    padding-left:30%;
+}
+#nav_image_logo{
+    width: 20%;
+}
+#logo_text{
+    padding-left: 29%;
+    font-family: 'Edu SA Beginner', cursive;
+}
+
+#main_body_signUp{
+    width: 60%;
+    margin-left:20% ;
+    margin-top: 3%;
+}
+
+.buttons{
+    margin-top:2% ;
+    margin-left: 25%;
+}

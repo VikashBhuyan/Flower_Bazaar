@@ -17,7 +17,7 @@ import com.flower.vikash.services.UserService;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("user")
+@RequestMapping("/user")
 public class UserController {
 
 	@Autowired
