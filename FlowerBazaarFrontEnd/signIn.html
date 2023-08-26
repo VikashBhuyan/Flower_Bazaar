@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign-Up</title>
+    <title>Sign-In</title>
     <!-- tab icon -->
     <link rel="icon" href="images/icons8-flower-100.png">
     <!-- google fonts -->
@@ -14,7 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="styles/signUp.css">
+    <link rel="stylesheet" href="styles/signIn.css">
 </head>
 <body>
     <!-- bootstrap navbar section start -->
@@ -62,13 +62,6 @@
       <!-- signup form starts -->
       <div id="main_body_signUp">
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="firstNameInput" placeholder="Enter First Name">
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="lastNameInput" placeholder="Enter Last Name">
-          </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Email</label>
             <input type="email" class="form-control" id="emailInput" placeholder="Enter Email Address">
@@ -77,8 +70,8 @@
             <label for="exampleFormControlInput1" class="form-label">Password</label>
             <input type="password" class="form-control" id="passwordInput" placeholder="Enter Password">
           </div>
-          <button type="button" class="btn btn-success buttons" id="signUp_button">Sign-Up</button>
-          <button type="button" class="btn btn-primary buttons">Sign-In Instead</button>
+          <button type="button" class="btn btn-success buttons" id="signIn_button">Sign-In / Login</button>
+          
       </div>
       
       
@@ -86,19 +79,15 @@
 </html>
 <script>
     let serverLink = "http://localhost:9000/user";
-    let button = document.getElementById("signUp_button");
-    button.addEventListener("click",signUpFunction);
+    let button = document.getElementById("signIn_button");
+    button.addEventListener("click",signInFunction);
 
-    function signUpFunction(){
-        let uri = serverLink+"/signUp";
-        let firstName = document.getElementById("firstNameInput").value;
-        let lastName = document.getElementById("lastNameInput").value;
+    function signInFunction(){
+        let uri = serverLink+"/signIn";
         let email = document.getElementById("emailInput").value;
         let password = document.getElementById("passwordInput").value;
 
-        let userSignUpObj = {
-            "firstName": firstName,
-            "lastName": lastName,
+        let userSignInObj = {
             "email": email,
             "password": password
         }
@@ -108,23 +97,21 @@
             headers:{
                 'Content-Type': 'application/json'
             },
-            body :JSON.stringify(userSignUpObj)
+            body :JSON.stringify(userSignInObj)
         })
-        .then(response => {
-            if (response.status === 201) {
-                alert("SuccessFully Created");
-                window.location.href= "signIn.html"
-            } else if (response.status === 400) {
-                alert("User already Registed with the given Email");
-            } else {
-                alert("Registration failed. Please try again later.");
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'Successfull SignIn' && data.token) {
+            localStorage.setItem('flowerBazaarToken', data.token);
+            console.log('Token stored in localStorage:', data.token);
+            window.location.href = "index.html";
+            } 
+            else {
+            console.log('Sign-in failed:', data.status);
             }
         })
         .catch(error => {
-            alert("An error occurred while registering the customer. Please try again later.");
-            console.error(error);
+        console.error('Error:', error);
         });
-
-        console.log( );
     }
 </script>

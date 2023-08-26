@@ -47,7 +47,7 @@
                 <a class="nav-link active" aria-current="page" href="#">Cart</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Login</a>
+                <a class="nav-link active" aria-current="page" href="signIn.html" id="login/logout">Login</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="signUp.html">Sign-Up</a>
@@ -167,3 +167,19 @@
       
 </body>
 </html>
+<script>
+  // login logout functionality
+  let login = document.getElementById("login/logout");
+  let token = localStorage.getItem("flowerBazaarToken");
+  if(token!=null){
+    login.innerHTML = "Log-Out";
+    login.href = "index.html";
+    login.addEventListener("click",logout);
+    function logout(){
+      localStorage.removeItem("flowerBazaarToken");
+    }
+  }
+  // login logout functionality ended 
+
+  
+</script>
