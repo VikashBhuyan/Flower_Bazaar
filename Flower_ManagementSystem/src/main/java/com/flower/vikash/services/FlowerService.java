@@ -23,7 +23,7 @@ public class FlowerService {
 		if(flowerRepo.findByName(flowerDto.getName())!=null) {
 			throw new FlowerException(flowerDto.getName()+" is already present in database");
 		}
-		Flower flower = new Flower(flowerDto.getName(),flowerDto.getPrice(),flowerDto.getDescription(),flowerDto.getImageUrl(),flowerDto.getQuantity()); 
+		Flower flower = new Flower(flowerDto.getName(),flowerDto.getPrice(),flowerDto.getDescription(),flowerDto.getImageUrl(),flowerDto.getImageUrl2(),flowerDto.getImageUrl3(),flowerDto.getFlowerRating(),flowerDto.getFlowerDetails(),flowerDto.getCareInformation(),flowerDto.getQuantity()); 
 		Flower addedFlower = flowerRepo.save(flower);
 		
 		ResponseDto response = new ResponseDto();

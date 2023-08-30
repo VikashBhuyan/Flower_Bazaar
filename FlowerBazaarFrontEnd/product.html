@@ -18,7 +18,7 @@
     <!-- my styles css  -->
     <link rel="stylesheet" href="styles/product.css">
 </head>
-<body>
+<body >
     <!-- navbar start  -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -59,9 +59,17 @@
       </nav>    
     <!-- navbar end  -->
     <hr class="border border-success border-2 opacity-40">
-    <div id="mainBody">
-        <!-- main carousel slides for item  -->
-        <div id="carouselExampleIndicators" class="carousel slide mainCarouselItemImage" data-bs-ride="true">
+
+    <div id="fullbody"></div>
+    
+</body>
+</html>
+
+<script>
+    let flower = JSON.parse( localStorage.getItem("selectedFlower"));
+    let tempContainer = document.createElement('div');
+    tempContainer.id = "mainBody";
+tempContainer.innerHTML = `<div id="carouselExampleIndicators" class="carousel slide mainCarouselItemImage" data-bs-ride="true">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -69,13 +77,13 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active image_div">
-                <img src="images/rose_pot_red.PNG" class="d-block w-100" alt="...">
+                <img src="${flower.imageUrl}" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item image_div" >
-                <img src="images/rose_image_2.PNG" class="d-block w-100" alt="...">
+                <img src="${flower.imageUrl2}" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item image_div">
-                <img src="images/rose_image_3.PNG" class="d-block w-100" alt="...">
+                <img src="${flower.imageUrl3}" class="d-block w-100" alt="...">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -89,14 +97,17 @@
           </div>
           <!-- main carousel slides for item ends  -->
           <div id="infoDiv">
-            <h2>Red Rose Plant</h2>
-            <p>Price : Rs XXX</p>
-            <p>Rating : 4.7 Star</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet libero dolorum, quia id natus tempora itaque facilis tenetur ipsum fuga excepturi quis impedit molestiae voluptate maxime repudiandae, autem adipisci officiis?
-            Ad, rem ab vel enim in, a adipisci molestiae incidunt laudantium, voluptate quasi consequuntur labore corrupti voluptatibus! Sapiente beatae, harum architecto voluptas, voluptates nostrum id officiis accusantium repudiandae, iste corporis?</p>
+            <h2>${flower.name}</h2>
+            <p>Price : Rs ${flower.price}</p>
+            <p>Rating : ${flower.flowerRating} Star</p>
+            <h5>Description</h5>
+            <p>${flower.description}</p>
             <a href="#" class="btn btn-outline-success buy_cart_button">Buy Now</a>
             <a href="#" class="btn btn-success ms-5 buy_cart_button">Add to Cart</a>
         </div>
-    </div>
-</body>
-</html>
+        `;
+        let mainBody = document.getElementById("fullbody");
+        mainBody.append(tempContainer)
+
+        console.log(flower);
+</script>

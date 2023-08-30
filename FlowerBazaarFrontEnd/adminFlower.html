@@ -31,8 +31,18 @@
             <input type="number" class="form-control" id="price" placeholder="Price">
             <label for="exampleFormControlInput1" class="form-label">Flower Description</label>
             <input type="text" class="form-control" id="description" placeholder="Description">
+            <label for="exampleFormControlInput1" class="form-label">Flower Rating</label>
+            <input type="text" class="form-control" id="rating" placeholder="Rating">
+            <label for="exampleFormControlInput1" class="form-label">Flower Details</label>
+            <input type="text" class="form-control" id="flowerDetails" placeholder="Details">
+            <label for="exampleFormControlInput1" class="form-label">Flower Care Information</label>
+            <input type="text" class="form-control" id="careInfo" placeholder="Care Information">
             <label for="exampleFormControlInput1" class="form-label">Enter ImageUrl</label>
             <input type="text" class="form-control" id="imageUrl" placeholder="Image url">
+            <label for="exampleFormControlInput1" class="form-label">Enter ImageUrl 2</label>
+            <input type="text" class="form-control" id="imageUrl2" placeholder="Image url">
+            <label for="exampleFormControlInput1" class="form-label">Enter ImageUrl 3</label>
+            <input type="text" class="form-control" id="imageUrl3" placeholder="Image url">
             <label for="exampleFormControlInput1" class="form-label">Enter Quantity</label>
             <input type="number" class="form-control" id="quantity" placeholder="Quantity">
           </div>
@@ -46,7 +56,13 @@
     let nameFlower = document.getElementById("name");
     let price = document.getElementById("price");
     let flowerDesc = document.getElementById("description");
+    let rating = document.getElementById("rating");
+    let flowerDetails = document.getElementById("flowerDetails");
+    let careInfo = document.getElementById("careInfo");
+
     let imageUrl = document.getElementById("imageUrl");
+    let imageUrl2 = document.getElementById("imageUrl2");
+    let imageUrl3 = document.getElementById("imageUrl3");
     let quantity = document.getElementById("quantity");
     let clrBtn = document.getElementById("clear_btn").addEventListener("click",()=>{
     nameFlower.value = "";
@@ -65,7 +81,12 @@
             "name" : nameFlower.value,
             "price" : price.value,
             "description" : flowerDesc.value,
+            "flowerRating": rating.value,
+            "flowerDetails": flowerDetails.value,
+            "careInformation": careInfo.value,
             "imageUrl" : imageUrl.value,
+            "imageUrl2" : imageUrl2.value,
+            "imageUrl3" : imageUrl3.value,
             "quantity" : quantity.value
         }
 

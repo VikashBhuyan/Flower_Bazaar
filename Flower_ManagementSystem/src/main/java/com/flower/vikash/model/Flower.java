@@ -29,22 +29,36 @@ public class Flower {
 	private String description;
 	
 	private String imageUrl;
-
+	private String imageUrl2;
+	private String imageUrl3;
+	private String flowerRating;
+	private String flowerDetails;
+	private String careInformation;
+	
 	private Integer quantity;
 	
 	@JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "flower")
     private List<Cart> carts;
 
-	
-	public Flower(String name, Double price, String description, String imageUrl,Integer quantity) {
+	public Flower(String name, Double price, String description, String imageUrl, String imageUrl2, String imageUrl3,
+		String flowerRating, String flowerDetails, String careInformation,
+			Integer quantity) {
 		super();
 		this.name = name;
 		this.price = price;
 		this.description = description;
 		this.imageUrl = imageUrl;
+		this.imageUrl2 = imageUrl2;
+		this.imageUrl3 = imageUrl3;
+		this.flowerRating = flowerRating;
+		this.flowerDetails = flowerDetails;
+		this.careInformation = careInformation;
 		this.quantity = quantity;
 	}
+
+	
+	
 
 	
 }

@@ -27,4 +27,18 @@
 .item_image{
     width: 90%;
     margin: 5%;
+    height: 40vh;
+}
+
+.flower-image {
+    width: 90%;
+    height: 40vh;
+  }
+.button-div{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.button-div a{
+    font-size: 14px;
 }

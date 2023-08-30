@@ -30,7 +30,6 @@ public class Orders {
 	
 	private String transactionMode;
 	
-	private Integer quantity;
 	
 	private Double totalCost;
 	
